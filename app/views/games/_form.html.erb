@@ -23,16 +23,16 @@
 
   <div class="field">
     <%= form.label :Rating %>
-    <%= form.number_field :Rating %>
+    <%= form.number_field :Rating, step:0.5 %>
   </div>
 
   <div class="field">
-    <%= form.label :ReleaseDate %>
+    <%= form.label :"Release Date" %>
     <%= form.text_area :ReleaseDate %>
   </div>
 
   <div class="field">
-    <%= form.label :NumberOfPlayers %>
+    <%= form.label :"Number Of Players" %>
     <%= form.number_field :NumberOfPlayers %>
   </div>
 
