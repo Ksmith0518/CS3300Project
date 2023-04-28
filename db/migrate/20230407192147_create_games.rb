@@ -3,9 +3,9 @@ class CreateGames < ActiveRecord::Migration[6.1]
     create_table :games do |t|
       t.string :Title
       t.text :Description
-      t.integer :Rating
+      t.number :Rating
       t.text :ReleaseDate
-      t.integer :NumberOfPlayers
+      t.number :NumberOfPlayers
 
       t.timestamps
     end
