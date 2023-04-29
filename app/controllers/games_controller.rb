@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new edit create update destroy]
 
   # GET /games or /games.json
   def index
@@ -21,7 +22,7 @@ class GamesController < ApplicationController
 
   def Symbol
   end
-  
+
   # POST /games or /games.json
   def create
     @game = Game.new(game_params)
