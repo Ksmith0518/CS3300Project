@@ -42,8 +42,8 @@ RSpec.feature "Games", type: :feature do
                 fill_in "Title", with: "Game Title"
                 fill_in "Description", with: "Game Description"
                 fill_in "Rating", with: "10"
-                fill_in "ReleaseDate", with: "05/18/2001"
-                fill_in "NumberOfPlayers", with: "10000"
+                fill_in "ReleaseDate", with: "05182001"
+                #fill_in "NumberOfPlayers", with: "10000"
             end
 
             click_button "Create Game"
