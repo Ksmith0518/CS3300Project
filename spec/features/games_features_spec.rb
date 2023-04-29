@@ -16,6 +16,14 @@ RSpec.feature "Games", type: :feature do
         expect(page).to have_content("Game was successfully updated")
       end
 
+      scenario "should be successful" do
+        within("form") do
+          fill_in "Title", with: "New Title content"
+        end
+        click_button "Update Game"
+        expect(page).to have_content("Game was successfully updated")
+      end
+
       scenario "should fail" do
         within("form") do
           fill_in "Description", with: ""
@@ -105,6 +113,20 @@ RSpec.feature "Games", type: :feature do
             expect(page).to have_content("Releasedate can't be blank")
         end
         scenario "game creation failed - no number of players" do
+            within("form") do
+                fill_in "Title", with: "Game Title"
+                fill_in "Description", with: "Game Description"
+                fill_in "Rating", with: "halop"
+                fill_in "Releasedate", with: "05182001"
+                #fill_in "Numberofplayers", with: "10000"
+            end
+            
+            click_button "Create Game"
+            
+            expect(page).to have_content("Numberofplayers can't be blank")
+        end
+
+        scenario "game creation failed - fields empty" do
             within("form") do
                 fill_in "Title", with: "Game Title"
                 fill_in "Description", with: "Game Description"
