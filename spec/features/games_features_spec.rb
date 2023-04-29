@@ -42,13 +42,80 @@ RSpec.feature "Games", type: :feature do
                 fill_in "Title", with: "Game Title"
                 fill_in "Description", with: "Game Description"
                 fill_in "Rating", with: "10"
-                fill_in "ReleaseDate", with: "05182001"
-                #fill_in "NumberOfPlayers", with: "10000"
+                fill_in "Releasedate", with: "05182001"
+                fill_in "Numberofplayers", with: "10000"
             end
 
             click_button "Create Game"
 
             expect(page).to have_content("Game was successfully created")
+        end
+
+        scenario "game creation failed - no title" do
+            within("form") do
+                fill_in "Description", with: "Game Description"
+                fill_in "Rating", with: "10"
+                fill_in "Releasedate", with: "05182001"
+                fill_in "Numberofplayers", with: "10000"
+            end
+            
+            click_button "Create Game"
+
+            expect(page).to have_content("Title can't be blank")
+        end
+
+        scenario "game creation failed - no description" do
+            within("form") do
+                fill_in "Title", with: "Game Title"
+                #fill_in "Description", with: "Game Description"
+                fill_in "Rating", with: "10"
+                fill_in "Releasedate", with: "05182001"
+                fill_in "Numberofplayers", with: "10000"
+            end
+            
+            click_button "Create Game"
+            
+            expect(page).to have_content("Description can't be blank")
+        end
+        scenario "game creation failed - no description" do
+            within("form") do
+                fill_in "Title", with: "Game Title"
+                fill_in "Description", with: "Game Description"
+                #fill_in "Rating", with: "10"
+                fill_in "Releasedate", with: "05182001"
+                fill_in "Numberofplayers", with: "10000"
+            end
+            
+            click_button "Create Game"
+            
+            expect(page).to have_content("Rating can't be blank")
+        end
+
+        scenario "game creation failed - no release date" do
+            within("form") do
+                fill_in "Title", with: "Game Title"
+                fill_in "Description", with: "Game Description"
+                fill_in "Rating", with: "halop"
+                #fill_in "Releasedate", with: "05182001"
+                fill_in "Numberofplayers", with: "10000"
+            end
+            
+            click_button "Create Game"
+            
+            expect(page).to have_content("Releasedate can't be blank")
+        end
+        scenario "game creation failed - no number of players" do
+            within("form") do
+                fill_in "Title", with: "Game Title"
+                fill_in "Description", with: "Game Description"
+                fill_in "Rating", with: "halop"
+                fill_in "Releasedate", with: "05182001"
+                #fill_in "Numberofplayers", with: "10000"
+            end
+            
+            click_button "Create Game"
+            
+            expect(page).to have_content("Numberofplayers can't be blank")
         end
     end
 end
