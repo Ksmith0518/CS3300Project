@@ -1,6 +1,28 @@
 require "rails_helper"
+require 'rspec/rails'
 
 RSpec.describe GamesController, :type => :controller do
+    login_user
+    
+    context "GET #create" do
+        # This should return the minimal set of attributes required to create a valid
+        # PROJECT. As you add validations to project, be sure to adjust the attributes here as well.
+        let(:valid_attributes) {{ :Title => "Test title!", :Description => "This is a test description", :Rating => "41", :ReleaseDate => "05/18/2001", :NumberOfPlayers => "10" }}
+
+
+        let(:valid_session) { {} }
+
+
+        describe "GET #create" do
+            it "returns a success response" do
+                Game.create! valid_attributes
+                get :index, params: {}, session: valid_session
+                expect(response).to have_http_status(:ok)
+            end
+        end
+    end
+
+
     describe "test web requests" do
         context "GET #index" do
             it "returns a success response" do

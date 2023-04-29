@@ -5,23 +5,12 @@
         "lines": [
           1,
           1,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null,
           1,
           null,
           null,
-          null,
           1,
-          6,
+          3,
           null,
-          null,
-          null,
-          1,
           null,
           null,
           1,
@@ -29,28 +18,40 @@
           null,
           null,
           1,
-          6,
-          null,
-          6,
-          6,
-          2,
-          1,
-          null,
-          10,
-          5,
-          null,
-          null,
+          0,
           null,
           null,
           null,
           1,
-          4,
-          4,
-          4,
-          2,
           null,
-          4,
-          2,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
           null,
           null,
           null,
@@ -68,12 +69,12 @@
           1,
           null,
           1,
-          11,
+          4,
           null,
           null,
           null,
           1,
-          10,
+          0,
           null,
           null
         ]
@@ -85,13 +86,6 @@
         ]
       },
       "/root/CS3300Project/app/models/game.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/root/CS3300Project/app/models/application_record.rb": {
         "lines": [
           1,
           1,
@@ -241,6 +235,15 @@
         "branches": {
         }
       },
+      "/root/CS3300Project/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/root/CS3300Project/app/models/project.rb": {
         "lines": [
           0,
@@ -248,8 +251,20 @@
         ],
         "branches": {
         }
+      },
+      "/root/CS3300Project/app/models/user.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1682728284
+    "timestamp": 1682731937
   }
 }

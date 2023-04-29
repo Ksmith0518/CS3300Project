@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'rspec/rails'
 
 describe "Game Attribute Requirements on Create", :type => :model do
   context "validation tests" do
